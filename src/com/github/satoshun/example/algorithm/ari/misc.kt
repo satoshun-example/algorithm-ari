@@ -8,3 +8,25 @@ fun fibonacci(n: Int): Int {
   }
   return _fibonacci(n)
 }
+
+
+class Stack {
+
+  private class Node(val value: Int) {
+    var next: Node? = null
+  }
+
+  private var head: Node? = null
+
+  fun push(v: Int) {
+    val node = Node(v)
+    node.next = head
+    head = node
+  }
+
+  fun pop(): Int {
+    val _head = head ?: throw IllegalStateException("empty stack")
+    head = _head.next
+    return _head.value
+  }
+}
