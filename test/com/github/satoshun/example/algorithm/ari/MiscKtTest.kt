@@ -1,7 +1,7 @@
 package com.github.satoshun.example.algorithm.ari
 
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.*
+import org.junit.Assert.assertThat
 import org.junit.Test
 
 class MiscKtTest {
@@ -28,5 +28,21 @@ class MiscKtTest {
     assertThat(stack.pop(), `is`(400))
     assertThat(stack.pop(), `is`(300))
     assertThat(stack.pop(), `is`(200))
+  }
+
+  @Throws(Exception::class)
+  @Test fun queue_success() {
+    val queue = Queue()
+    queue.push(100)
+    assertThat(queue.poll(), `is`(100))
+
+    queue.push(200)
+    queue.push(300)
+    queue.push(400)
+    queue.push(500)
+    assertThat(queue.poll(), `is`(200))
+    assertThat(queue.poll(), `is`(300))
+    assertThat(queue.poll(), `is`(400))
+    assertThat(queue.poll(), `is`(500))
   }
 }
