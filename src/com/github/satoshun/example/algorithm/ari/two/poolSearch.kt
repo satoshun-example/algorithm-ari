@@ -1,6 +1,6 @@
 package com.github.satoshun.example.algorithm.ari.two
 
-fun fillMaps(maps: MutableList<Int>, start: Int, x: Int, y: Int) {
+private fun fillMaps(maps: MutableList<Int>, start: Int, x: Int, y: Int) {
   maps[start] = 0
   val left = (start % x == 0)
   val right = (start % x == x - 1)
@@ -16,6 +16,9 @@ fun fillMaps(maps: MutableList<Int>, start: Int, x: Int, y: Int) {
   if (!right && !bottom && maps[start + 1 + x] == 1) fillMaps(maps, start + 1 + x, x, y)
 }
 
+/**
+ * Lake Counting
+ */
 fun poolSearch(_maps: List<Int>, x: Int, y: Int): Int {
   val maps = _maps.toMutableList()
   var a = 0
