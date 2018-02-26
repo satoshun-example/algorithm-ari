@@ -25,10 +25,23 @@ def ants1(l: int, n: int, x: list):
     result += [maxi]
     return result
 
-
 def test_ants():
     for (n, m, k, result) in [
         (10, 3, [2, 6, 7], [4, 8])
     ]:
         assert result == ants1(n, m, k)
+    print("success!!")
+
+
+def ants2(l: int, n: int, x: list):
+    return [
+        max(min(e, l - e) for e in x),
+        max(max(e, l - e) for e in x),
+    ]
+
+def test_ants2():
+    for (n, m, k, result) in [
+        (10, 3, [2, 6, 7], [4, 8])
+    ]:
+        assert result == ants2(n, m, k)
     print("success!!")
