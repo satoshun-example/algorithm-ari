@@ -1,6 +1,25 @@
 #!/usr/local/bin/python3
 
 ##くじ引き##
+# O(n**2 * log(n))
+def kujibiki3(n: int, m: int, k: list) -> bool:
+    size = len(k)
+    k = _sort(k)
+    kk = _sort([k[x1] + k[x2] for x1 in range(size) for x2 in range(size)])
+    for x1 in range(size):
+        for x2 in range(size):
+            if _binary_search(kk, m - k[x1] - k[x2]):
+                return True
+    return False
+
+def test_kujibiki3():
+    for (n, m, k, result) in [
+        (3, 10, [1, 3, 5], True),
+        (3, 9, [1, 3, 5], False),
+        (4, 9, [1, 3, 5, 6], True),
+    ]:
+        assert result == kujibiki3(n, m, k)
+    print("success!!")
 
 # O(n**3 * log(n))
 def kujibiki2(n: int, m: int, k: list) -> bool:
@@ -9,21 +28,20 @@ def kujibiki2(n: int, m: int, k: list) -> bool:
     for x1 in range(size):
         for x2 in range(size):
             for x3 in range(size):
-                x = m - k[x1] - k[x2] - k[x3]
-                if (_binary_search1(k, x)):
+                if (_binary_search(k, m - k[x1] - k[x2] - k[x3])):
                     return True
     return False
 
 # include bug
-def _binary_search1(k: list, x: int) -> bool:
-    s = int(len(k) / 2 + 0.5)
+def _binary_search(k: list, x: int) -> bool:
+    s = int(len(k) / 2)
     d = s
     while True:
         if k[s] == x:
             return True
-        if s == 0 or s == len(k) - 1:
+        if s == 0 or s == len(k) - 1 or d == 0:
             break
-        d = int(d / 2 + 0.5)
+        d = int(d / 2)
         if k[s] > x:
             s -= d
         else:
@@ -36,7 +54,8 @@ def _sort(k: list) -> list:
 def test_kujibiki2():
     for (n, m, k, result) in [
         (3, 10, [1, 3, 5], True),
-        (3, 9, [1, 3, 5], False)
+        (3, 9, [1, 3, 5], False),
+        (4, 9, [1, 3, 5, 6], True),
     ]:
         assert result == kujibiki2(n, m, k)
     print("success!!")
@@ -56,7 +75,8 @@ def kujibiki1(n: int, m: int, k: list):
 def test_kujibiki1():
     for (n, m, k, result) in [
         (3, 10, [1, 3, 5], True),
-        (3, 9, [1, 3, 5], False)
+        (3, 9, [1, 3, 5], False),
+        (4, 9, [1, 3, 5, 6], True),
     ]:
         assert result == kujibiki1(n, m, k)
     print("success!!")
