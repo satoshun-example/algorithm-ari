@@ -16,7 +16,7 @@ def triangle1(n: int, a: list):
     return m
 
 
-if __name__ == '__main__':
+def test_triangle1():
     for (n, a, result) in [
         (5, [2, 3, 4, 5, 10], 12),
         (4, [4, 5, 10, 20], 0)
