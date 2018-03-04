@@ -57,3 +57,34 @@ def test_stack():
     assert stack.pop() == 20
     assert stack.pop() == 10
     assert stack.pop() is None
+
+
+## キュー
+class Queue:
+    head = None
+
+    def push(self, value):
+        if self.head is None:
+            self.head = Node(value, None)
+            return
+        last = self.head
+        while last.next is not None:
+            last = last.next
+        last.next = Node(value, None)
+
+    def pop(self):
+        if self.head is None:
+            return None
+        head = self.head
+        self.head = head.next
+        return head.value
+
+def test_queue():
+    queue = Queue()
+    queue.push(10)
+    queue.push(20)
+    queue.push(50)
+    assert queue.pop() == 10
+    assert queue.pop() == 20
+    assert queue.pop() == 50
+    assert queue.pop() is None
