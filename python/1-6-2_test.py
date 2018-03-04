@@ -30,7 +30,6 @@ def test_ants():
         (10, 3, [2, 6, 7], [4, 8])
     ]:
         assert result == ants1(n, m, k)
-    print("success!!")
 
 
 def ants2(l: int, n: int, x: list):
@@ -44,4 +43,3 @@ def test_ants2():
         (10, 3, [2, 6, 7], [4, 8])
     ]:
         assert result == ants2(n, m, k)
-    print("success!!")

@@ -19,7 +19,6 @@ def test_kujibiki3():
         (4, 9, [1, 3, 5, 6], True),
     ]:
         assert result == kujibiki3(n, m, k)
-    print("success!!")
 
 # O(n**3 * log(n))
 def kujibiki2(n: int, m: int, k: list) -> bool:
@@ -58,7 +57,6 @@ def test_kujibiki2():
         (4, 9, [1, 3, 5, 6], True),
     ]:
         assert result == kujibiki2(n, m, k)
-    print("success!!")
 
 
 # O(n**4)
@@ -79,4 +77,3 @@ def test_kujibiki1():
         (4, 9, [1, 3, 5, 6], True),
     ]:
         assert result == kujibiki1(n, m, k)
-    print("success!!")

@@ -22,5 +22,3 @@ def test_triangle1():
         (4, [4, 5, 10, 20], 0)
     ]:
         assert result == triangle1(n, a)
-
-    print("success!!")
