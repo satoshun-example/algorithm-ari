@@ -1,5 +1,6 @@
 #!/usr/local/bin/python3
 
+
 ## section/区間
 def best_cow_line(n, s):
     r = ''

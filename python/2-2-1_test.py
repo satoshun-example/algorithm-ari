@@ -1,5 +1,6 @@
 #!/usr/local/bin/python3
 
+
 ## コイン/貪欲法
 def coin(c1, c5, c10, c50, c100, c500, s):
     coins = [c500, c100, c50, c10, c5, c1]
@@ -15,6 +16,7 @@ def coin(c1, c5, c10, c50, c100, c500, s):
                 coins[i] -= 1
                 break
     return c
+
 
 def test_coin():
     for (c1, c5, c10, c50, c100, c500, s, result) in [
