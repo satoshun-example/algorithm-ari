@@ -5,11 +5,8 @@
 def fence_repair(n, l):
     cost = 0
     l = sorted(l, reverse=True)
-    print(l)
     for i, e in enumerate(l[:-1]):
-        print(e)
         cost += e
-        print(sum(l[i + 1:]))
         cost += sum(l[i + 1:])
     return cost
 
