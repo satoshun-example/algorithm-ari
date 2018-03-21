@@ -15,11 +15,10 @@ def knapsack(n, l, w):
                 )
             else:
                 m[ci][cw] = m[ci + 1][cw]
-        break
     return m[0][w]
 
 
-def test_knapsack():
+def test_knapsack3():
     for (n, l, w, result) in [
         (4, [(2, 3), (1, 2), (3, 4), (2, 2)], 5, 7),
     ]:

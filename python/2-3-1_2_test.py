@@ -31,7 +31,7 @@ def _knapsack(l, cp, cw, memo):
     return res
 
 
-def test_knapsack():
+def test_knapsack2():
     for (n, l, w, result) in [
         (4, [(2, 3), (1, 2), (3, 4), (2, 2)], 5, 7),
     ]:
