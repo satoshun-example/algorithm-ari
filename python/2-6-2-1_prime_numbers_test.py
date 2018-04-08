@@ -2,7 +2,7 @@
 
 
 # 素数の個数
-# エラトステネス
+# エラトステネスじゃなかった
 def prime_numbers(n):
     q = [i for i in range(2, n + 1)]
     i = 0
